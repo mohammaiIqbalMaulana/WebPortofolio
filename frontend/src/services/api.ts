@@ -4,12 +4,17 @@
 // backend's port (4000). This means the same build works whether you open
 // it as http://localhost:3000 on your own machine or as
 // http://<your-computer-LAN-IP>:3000 from a phone on the same Wi-Fi — no
-// manual .env edit needed per network. VITE_BACKEND_URL still wins if set
-// (e.g. for a real production deployment).
+// manual .env edit needed per network.
+//
+// VITE_BACKEND_URL overrides this when set — including to an EMPTY STRING,
+// which is the production setup: Nginx reverse-proxies /uploads (and /api)
+// to the backend on the same origin/port, so image URLs should be relative
+// (no host/port prefix at all). `||` would treat "" as falsy and silently
+// fall back to the dev guess, so this checks for `undefined` specifically.
 const inferredBackendUrl =
   typeof window !== 'undefined' ? `${window.location.protocol}//${window.location.hostname}:4000` : 'http://localhost:4000';
 
-export const BACKEND_URL = import.meta.env.VITE_BACKEND_URL || inferredBackendUrl;
+export const BACKEND_URL = import.meta.env.VITE_BACKEND_URL !== undefined ? import.meta.env.VITE_BACKEND_URL : inferredBackendUrl;
 
 export interface Project {
   id: number;
