@@ -174,7 +174,8 @@ VITE_API_BASE_URL="http://localhost:3000/api"
 
 # EmailJS Configuration (for contact form)
 VITE_EMAILJS_SERVICE_ID="your-emailjs-service-id"
-VITE_EMAILJS_TEMPLATE_ID="your-emailjs-template-id"
+VITE_EMAILJS_TEMPLATE_ID="your-contact-template-id"
+VITE_EMAILJS_NEWSLETTER_TEMPLATE_ID="your-newsletter-template-id"
 VITE_EMAILJS_PUBLIC_KEY="your-emailjs-public-key"
 ```
 

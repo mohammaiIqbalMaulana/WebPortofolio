@@ -13,6 +13,7 @@ lerna-debug.log*
 
 # config files
 emailjs.ts
+!frontend/src/config/emailjs.ts
 
 TODO.md
 

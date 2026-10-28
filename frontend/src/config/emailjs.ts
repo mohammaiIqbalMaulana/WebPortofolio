@@ -1,0 +1,7 @@
+export const EMAILJS_CONFIG = {
+  SERVICE_ID: import.meta.env.VITE_EMAILJS_SERVICE_ID ?? '',
+  CONTACT_TEMPLATE_ID: import.meta.env.VITE_EMAILJS_TEMPLATE_ID ?? '',
+  NEWSLETTER_TEMPLATE_ID:
+    import.meta.env.VITE_EMAILJS_NEWSLETTER_TEMPLATE_ID ?? '',
+  PUBLIC_KEY: import.meta.env.VITE_EMAILJS_PUBLIC_KEY ?? ''
+};
